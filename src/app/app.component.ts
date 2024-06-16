@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HomeComponent} from "./home/home.component";
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent],
+  imports: [CommonModule, EmployeeListComponent],
   template: `
     <main>
       <header class="brand-name">
-        <img class="brand-logo" src="../homelogo.svg" alt="logo" aria-hidden="true" />
+<!--        <img class="brand-logo" src="../homelogo.svg" alt="logo" aria-hidden="true" />-->
+        <h1> SpringBoot + Angular</h1>
       </header>
       <section class="content">
-        <app-home></app-home>
+        <h2>Sample Data pulled from a REST API</h2>
+        <app-employee-list></app-employee-list>
       </section>
     </main>
   `,
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'homes';
